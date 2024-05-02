@@ -88,3 +88,21 @@ export const team = [
         imgUrl: avatar,
     },
 ];
+
+export const features = [
+    {
+        id: 1,
+        title: 'User-friendly interfaces',
+        description: 'Interfaces designed for ease of use, ensuring a smooth experience for users interacting with the system.',
+    },
+    {
+        id: 2,
+        title: 'Real-time data submission',
+        description: 'Capability for users to submit feedback in real-time, allowing for prompt data collection and analysis.',
+    },
+    {
+        id: 3,
+        title: 'Feedback tracking',
+        description: 'Ability to track individual feedback submissions, facilitating monitoring and analysis of feedback history.',
+    },
+];
