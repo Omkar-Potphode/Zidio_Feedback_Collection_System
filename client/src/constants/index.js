@@ -1,4 +1,4 @@
-import { twitter, instagram, facebook } from "../assets"
+import { twitter, instagram, facebook, avatar } from "../assets"
 
 export const header = [
     {
@@ -53,5 +53,38 @@ export const socials = [
         title: "Facebook",
         iconUrl: facebook,
         url: "#",
+    },
+];
+
+export const team = [
+    {
+        id: 1,
+        name: 'Siddhant Chalke',
+        role: 'Developer',
+        imgUrl: avatar,
+    },
+    {
+        id: 2,
+        name: 'Omkar Potphode',
+        role: 'Developer',
+        imgUrl: avatar,
+    },
+    {
+        id: 3,
+        name: 'Ritik Joshi',
+        role: 'Developer',
+        imgUrl: avatar,
+    },
+    {
+        id: 4,
+        name: 'Sameer Ahamed S',
+        role: 'Developer',
+        imgUrl: avatar,
+    },
+    {
+        id: 5,
+        name: 'Sweeti',
+        role: 'Developer',
+        imgUrl: avatar,
     },
 ];
