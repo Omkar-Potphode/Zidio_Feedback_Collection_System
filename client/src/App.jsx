@@ -1,4 +1,5 @@
 import ButtonGradient from "./assets/svg/ButtonGradient"
+import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 
@@ -10,6 +11,7 @@ function App() {
       {/* CLient Side Rendering */}
       <Header/>
       <Hero/>
+      <Footer/>
 
       {/* Admin Side Rendering */}
 
