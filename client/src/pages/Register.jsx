@@ -47,11 +47,11 @@ const Register = () => {
     }
   }
   return (
-    <section className='pl-[10rem] flex flex-wrap'>
-      <div className="mr-[4rem] mt-[5rem]">
-        <h1 className="text-2xl font-semibold mb-4">Register</h1>
+    <section className='w-[100vw] h-[80vh] px-5'>
+      <div className="mt-[5rem] sm:ml-[20rem]">
+        <h1 className="text-3xl font-semibold mb-4">Register</h1>
 
-        <form className="container w-[40rem]" onSubmit={submitHandler}>
+        <form className="container w-[90vw] h-[28rem] sm:w-[50vw] " onSubmit={submitHandler}>
 
           <div className="my-[2rem]">
             <label htmlFor="name" className="block text-sm font-medium text-black">
@@ -80,11 +80,11 @@ const Register = () => {
           {/* <button disabled={isLoading} type='submit' className="bg-green-500 text-white px-4 py-2 rounded cursor-pointer my-[1rem]">
             {isLoading ? 'Registering...' : 'Register'}
           </button> */}
-          <button type='submit'>Register</button>
+          <button type='submit' className="bg-green-500 text-white px-4 py-2 rounded cursor-pointer my-[1rem] float-right">Register</button>
           
           {/* {isLoading && <Loader/>} */}
         </form>
-        <div className="mt-4">
+        <div className="mb-4">
           <p>
             Already have an account ? {' '}
             <Link to={redirect ? `/login?redirect-${redirect}` : '/login'} className='text-blue-500 hover:underline'>

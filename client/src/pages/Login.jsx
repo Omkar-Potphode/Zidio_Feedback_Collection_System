@@ -36,10 +36,10 @@ const Login = () => {
   }
   return (
     <div>
-        <section className="pl-[10rem] flex flex-wrap">
-          <div className="mr-[4rem] mt-[5rem]">
-            <h1 className="text-2xl font-semibold mb-4">Login</h1>
-            <form onSubmit={submitHandler} className='container w-[40rem]'>
+        <section className="w-[100vw] h-[80vh] px-5">
+          <div className="mt-[5rem] sm:ml-[20rem]">
+            <h1 className="text-3xl font-semibold mb-4">Login</h1>
+            <form onSubmit={submitHandler} className='container w-[90vw] h-64 sm:w-[50vw]'>
               {/* Email address */}
               <div className="my-[2rem]">
                 <label htmlFor="" className="block text-sm font-medium text-black">
@@ -58,7 +58,7 @@ const Login = () => {
               {/* Submit */}
               {/* <button disabled={isLoading} type="submit" className="bg-green-500 text-white px-4 py-2 rounded cursor-pointer my-[1rem]">{isLoading ? 'Signing In...' : 'Sign In'}
               </button> */}
-              <button type='submit'>Log In</button>
+              <button type='submit' className="bg-green-500 text-white px-4 py-2 rounded cursor-pointer mb-[1rem] float-right">Log In</button>
 
             {/* { isLoading && <Loader /> } */}
             </form>

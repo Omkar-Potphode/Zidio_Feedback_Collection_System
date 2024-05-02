@@ -7,9 +7,11 @@ import Home from './pages/Home';
 const Layout = () =>{
   return (
     <div className="app">
-      {/* <Navbar /> */}
-      <Outlet />
+      {/* <Navbar />  */}
+        <Outlet />
       {/* <Footer /> */}
+
+      {/*PS:  Navbar & Footer will be common for every page */}
     </div>
   )
 }
