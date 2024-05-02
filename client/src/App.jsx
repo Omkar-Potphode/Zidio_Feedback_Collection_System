@@ -1,21 +1,57 @@
-import ButtonGradient from "./assets/svg/ButtonGradient"
-import Home from "./pages/Home"
+import {createBrowserRouter,RouterProvider,Outlet} from 'react-router-dom';
+import Notfound from './pages/Notfound';
+import Login from './pages/Login';
+import Register from './pages/Register'
+import Home from './pages/Home';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import ButtonGradient from './assets/svg/ButtonGradient';
 
-function App() {
-
+const Layout = () =>{
   return (
-    <>
-    <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-      {/* CLient Side Rendering */}
-      <Home/>
+    <div className="app">
+      {/* <Navbar />  */}
+      <Header/>
+        <Outlet />
+        <ButtonGradient/>
+      <Footer/>
+      {/* <Footer /> */}
 
-      {/* Admin Side Rendering */}
-
+      {/*PS:  Navbar & Footer will be common for every page */}
     </div>
-
-    <ButtonGradient/>
-    </>
   )
 }
 
-export default App
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path:"/",
+        element: <Home />
+      },
+      {
+        path:'/login',
+        element: <Login />
+      },
+      {
+        path:'/register',
+        element: <Register />
+      },
+      {
+        path: "*",
+        element: <Notfound />
+      }
+    ]
+  },
+])
+
+export default function App() {
+
+  return (
+    <div className="App pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+      <RouterProvider router={router} />
+    </div>
+  )
+}
