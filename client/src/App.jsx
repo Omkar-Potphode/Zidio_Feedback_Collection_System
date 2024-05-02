@@ -1,5 +1,6 @@
 import ButtonGradient from "./assets/svg/ButtonGradient"
 import About from "./components/About"
+import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
@@ -13,6 +14,7 @@ function App() {
       <Header/>
       <Hero/>
       <About/>
+      <Contact/>
       <Footer/>
 
       {/* Admin Side Rendering */}
