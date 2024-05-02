@@ -1,10 +1,5 @@
 import ButtonGradient from "./assets/svg/ButtonGradient"
-import About from "./components/About"
-import Contact from "./components/Contact"
-import Features from "./components/Features"
-import Footer from "./components/Footer"
-import Header from "./components/Header"
-import Hero from "./components/Hero"
+import Home from "./pages/Home"
 
 function App() {
 
@@ -12,12 +7,7 @@ function App() {
     <>
     <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
       {/* CLient Side Rendering */}
-      <Header/>
-      <Hero/>
-      <Features/>
-      <About/>
-      <Contact/>
-      <Footer/>
+      <Home/>
 
       {/* Admin Side Rendering */}
 
