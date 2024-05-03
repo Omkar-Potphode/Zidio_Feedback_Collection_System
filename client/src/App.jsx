@@ -3,6 +3,7 @@ import Notfound from './pages/Notfound';
 import Login from './pages/Login';
 import Register from './pages/Register'
 import Home from './pages/Home';
+import Dashboard from './pages/admin/Dashboard';
 
 const Layout = () =>{
   return (
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element: <Register />
+      },
+      {
+        path:'/dashboard',
+        element: <Dashboard />
       },
       {
         path: "*",
