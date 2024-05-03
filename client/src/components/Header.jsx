@@ -1,5 +1,5 @@
 import { header } from '../constants';
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import Button from './Button';
 import { useState } from 'react';
 import { disablePageScroll, enablePageScroll} from 'scroll-lock'
@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <>
-    <div className={`fixed top-0 left-0 w-full z-50 border-b border-gray-200 lg:bg-background/90 lg:backdrop-blur-sm 
+    <div className={`fixed top-0 left-0 w-full z-50 border-b shadow-lg border-gray-200 lg:bg-background/90 lg:backdrop-blur-sm 
     ${openNavigation ? "bg-background" : "bg-background/90 backdrop-blur-sm"}`}>
         <div className='flex items-center px-5 lg:px-7.5 xl:px-10 mx-lg:py-4'>
             <a className='block w-[12rem] xl:mr-8' href='#hero'>
@@ -46,9 +46,9 @@ const Header = () => {
                     <a key={item.id}
                     href={item.url}
                     onClick={handleClick}
-                    className={`block relative font-code text-2xl uppercase text-gray-400 transition-colors hover:text-text 
+                    className={`block relative font-code text-2xl uppercase text-text transition-colors hover:text-secondary
                     ${item.onlyMobile ? "lg:hidden" : ""} px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-sm lg:font-semibold
-                    ${item.url === pathName.hash ? "z-2 lg:text-text" : "lg:text-gray-200/30"}`}
+                    ${item.url === pathName.hash ? "z-2 lg:text-text" : "lg:text-text"}`}
                     >
                         {item.title}
                     </a>
@@ -58,15 +58,20 @@ const Header = () => {
                 <HamburgerMenu/>
             </nav>
 
-            <a href="#signUp"
-            className='button hidden mr-8 text-gray-200/50 transition-colors hover:text-primary lg:block'
-            >
-            New account
-            </a>
+            <Link to="/register">
+                <a href="#signUp"
+                className='button hidden mr-8 text-text transition-colors hover:text-secondary lg:block'
+                >
+                    New account
+                </a>
+            </Link>
 
+            <Link to="/login">
             <Button className='hidden lg:flex' href="#login">
                 Sign in
             </Button>
+            </Link>
+            
 
             <Button className="ml-auto lg:hidden"
             px="px-3"

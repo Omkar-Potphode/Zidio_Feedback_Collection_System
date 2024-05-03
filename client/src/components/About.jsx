@@ -4,7 +4,7 @@ import { team } from '../constants';
 const About = () => {
   return (
     <>
-    <Section crosses className="mt-2">
+    <Section crosses className="mt-2" id="about-us">
         <div className='container px-5 py-14 mx-auto -mt-[5.25rem]'>
             <div className='flex flex-col text-center w-full mb-20'>
                 <h1 className='sm:text-3xl text-2xl font-bold font-grotesk  mb-4 text-text'>

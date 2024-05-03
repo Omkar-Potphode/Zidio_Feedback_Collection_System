@@ -4,12 +4,12 @@ export const header = [
     {
         id: 1,
         title: 'Home',
-        url: '#home',
+        url: '#hero',
     },
     {
         id: 2,
-        title: 'Feedback Form',
-        url: '#feedback-form',
+        title: 'Features',
+        url: '#features',
     },
     {
         id: 3,

@@ -50,7 +50,7 @@ const router = createBrowserRouter([
 export default function App() {
 
   return (
-    <div className="App pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+    <div className="App pt-[5.75rem] lg:pt-[5.25rem] overflow-hidden">
       <RouterProvider router={router} />
     </div>
   )
