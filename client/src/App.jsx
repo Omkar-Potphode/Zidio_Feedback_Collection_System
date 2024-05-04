@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Register from './pages/Register'
 import Home from './pages/Home';
 import Dashboard from './pages/admin/Dashboard';
+import FormDetails from './pages/admin/FormDetails';
 
 const Layout = () =>{
   return (
@@ -35,8 +36,12 @@ const router = createBrowserRouter([
         element: <Register />
       },
       {
-        path:'/dashboard',
+        path:'/admin/dashboard',
         element: <Dashboard />
+      },
+      {
+        path:'/admin/form/:id',
+        element: <FormDetails />
       },
       {
         path: "*",
