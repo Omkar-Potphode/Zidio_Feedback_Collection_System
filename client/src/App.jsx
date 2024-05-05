@@ -3,6 +3,8 @@ import Notfound from './pages/Notfound';
 import Login from './pages/Login';
 import Register from './pages/Register'
 import Home from './pages/Home';
+import Dashboard from './pages/admin/Dashboard';
+import FormDetails from './pages/admin/FormDetails';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ButtonGradient from './assets/svg/ButtonGradient';
@@ -14,8 +16,6 @@ const Layout = () =>{
         <Outlet />
         <ButtonGradient/>
       <Footer/>
-
-      {/*PS:  Navbar & Footer will be common for every page */}
     </div>
   )
 }
@@ -37,6 +37,16 @@ const router = createBrowserRouter([
         path:'/register',
         element: <Register />
       },
+      // Admin routes
+      {
+        path:'/admin/dashboard',
+        element: <Dashboard />
+      },
+      {
+        path:'/admin/form/:id',
+        element: <FormDetails />
+      },
+      
       {
         path: "*",
         element: <Notfound />
