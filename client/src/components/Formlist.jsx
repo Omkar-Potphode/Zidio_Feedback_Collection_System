@@ -28,7 +28,7 @@ const Formlist = () => {
     <section className='px-28 py-2' id='formlist'>
       <div className='flex justify-between text-xl'>
         <div>
-          <p>Recent forms</p>
+          <p className='inline-block'>Recent forms</p>
           <AiOutlineHistory color='grey' className='inline-block mx-2' />
         </div>
         <button>Sort <AiOutlineSortDescending color='blue' className='inline-block mx-2' /></button>
@@ -40,7 +40,7 @@ const Formlist = () => {
             <th className='w-1/4'>Title</th>
             <th className='w-1/4'>Author</th>
             <th className='w-1/4'>Date</th>
-            <th className='w-1/4'><button><AiFillDelete color='red' /> Delete all</button></th>
+            <th className='w-1/4'><button>Delete all <AiFillDelete color='red' className='inline-block'/></button></th>
           </tr>
         </thead>
         <tbody>
