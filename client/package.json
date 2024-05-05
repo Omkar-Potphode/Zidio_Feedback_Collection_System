@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
+    "lottie-react": "^2.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.1",
     "react-router-dom": "^6.23.0",
-    "lottie-react": "^2.4.0",
     "scroll-lock": "^2.1.5"
   },
   "devDependencies": {
@@ -28,8 +28,8 @@
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "postcss": "^8.4.38",
     "framer-motion": "^11.1.7",
+    "postcss": "^8.4.38",
     "tailwind-merge": "^2.3.0",
     "tailwindcss": "^3.4.3",
     "vite": "^5.2.0"
