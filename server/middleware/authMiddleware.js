@@ -4,7 +4,7 @@ const User = require("../models/userModel.js"); // Assuming UserModel is defined
 const asyncHandler = require("express-async-handler");
 
 // Middleware to protect routes by verifying JWT token
-const protect = asyncHandler(async (req, res, next) => {
+exports.Protect = asyncHandler(async (req, res, next) => {
   let token;
 
   // Check if authorization header is present and starts with "Bearer"
@@ -36,6 +36,3 @@ const protect = asyncHandler(async (req, res, next) => {
     throw new Error("Not authorized, no token"); // Throw error
   }
 });
-
-// Export the protect middleware for use in other parts of the application
-module.exports = { protect };
