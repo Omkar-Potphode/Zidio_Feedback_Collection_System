@@ -33,11 +33,11 @@ const Header = () => {
     <div className={`fixed top-0 left-0 w-full z-50 border-b shadow-lg border-gray-200 lg:bg-background/90 lg:backdrop-blur-sm 
     ${openNavigation ? "bg-background" : "bg-background/90 backdrop-blur-sm"}`}>
         <div className='flex items-center px-5 lg:px-7.5 xl:px-10 mx-lg:py-4'>
-            <a className='block w-[12rem] xl:mr-8' href='#hero'>
+            <Link className='block w-[12rem] xl:mr-8' to="/">
                 <span className='text-lg w-[12rem] md:text-3xl'>
                     ReviewHub
                 </span>
-            </a>
+            </Link>
 
             <nav className={`${openNavigation ? "flex" : 'hidden'} 
             fixed top-[5rem] bottom-0 left-0 right-0 bg-background lg:static lg:flex lg:mx-auto`}>

@@ -1,4 +1,4 @@
-import {createBrowserRouter,RouterProvider,Outlet} from 'react-router-dom';
+import {createBrowserRouter,RouterProvider,Outlet, useLocation} from 'react-router-dom';
 import Notfound from './pages/Notfound';
 import Login from './pages/Login';
 import Register from './pages/Register'
@@ -8,14 +8,19 @@ import FormDetails from './pages/admin/FormDetails';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ButtonGradient from './assets/svg/ButtonGradient';
+import { FeedBackForms } from './pages/FeedBackForms';
 
 const Layout = () =>{
+
+  const location = useLocation();
+  const isFeedbackFormsRoute = location.pathname === "/forms"
+
   return (
     <div className="app">
-      <Header/>
+      {!isFeedbackFormsRoute && <Header/>}
         <Outlet />
         <ButtonGradient/>
-      <Footer/>
+      {!isFeedbackFormsRoute && <Footer/>}
     </div>
   )
 }
@@ -36,6 +41,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element: <Register />
+      },
+      {
+        path: '/forms',
+        element: <FeedBackForms/>
       },
       // Admin routes
       {

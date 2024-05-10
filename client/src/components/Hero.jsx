@@ -1,6 +1,7 @@
 import RetroGrid from '../design/RetroGrid';
 import Section from './Section';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     return (
@@ -23,9 +24,11 @@ const Hero = () => {
                     Our intuitive feedback collection system helps you gather valuable insights from your customers, clients, and team members.
                 </p>
 
-                <Button white className="mt-6 hover:text-text" href="">
-                    Submit Feedback
-                </Button>
+                <Link to="/register">
+                    <Button white className="mt-6 hover:text-text">
+                        Submit Feedback
+                    </Button>
+                </Link>
 
                 <RetroGrid/>
             </div>
