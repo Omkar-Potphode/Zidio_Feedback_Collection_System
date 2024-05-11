@@ -59,9 +59,7 @@ const Header = () => {
             </nav>
 
             <Link to="/register">
-                <a href="#signUp"
-                className='button hidden mr-8 text-text transition-colors hover:text-secondary lg:block'
-                >
+                <a href="#signUp" className='button hidden mr-8 text-text transition-colors hover:text-secondary lg:block' >
                     New account
                 </a>
             </Link>
@@ -71,7 +69,7 @@ const Header = () => {
                 Sign in
             </Button>
             </Link>
-            
+
 
             <Button className="ml-auto lg:hidden"
             px="px-3"
