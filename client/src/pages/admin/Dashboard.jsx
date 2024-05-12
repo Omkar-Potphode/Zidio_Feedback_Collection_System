@@ -4,35 +4,36 @@ import { AiOutlinePlus } from 'react-icons/ai'
 import RadarChart from '../../components/Radar-chart'
 import AreaDTChart from '../../components/AreaDT-chart'
 import DonutChart from '../../components/Donut-chart'
+import Box from '../../components/Box'
+import TopUserslist from '../../components/TopUserslist'
 
 const Dashboard = () => {
   return (
     <main className='w-[100vw] px-12 py-4' id='dashboard'>
         <section className='my-4' id="dashboard-overview">
-            <h2 className='text-xl'>Overview</h2>
+            <h2 className='text-xl mb-4 text-sky-700'>Overview</h2>
             <div className="flex flex-row justify-around">
-                <div className="w-1/4 h-20 p-[8px] bg-white">
-                    <p>Total Feedbacks received</p> <p className='text-3xl text-center font-bold tracking-wide hover:tracking-widest'>123</p></div>
-                <div className="w-1/4 h-20 p-[8px] bg-white">
-                    <p>Average Ratings</p> <p className='text-3xl text-center font-bold tracking-wide hover:tracking-widest'>3.7⭐</p></div>
-                <div className="w-1/4 h-20 p-[8px] bg-white">
-                    <p>Total Users</p> <p className='text-3xl text-center font-bold tracking-wide hover:tracking-widest'>45</p></div>
+                {/* props will be dynamically inserted into 'Boxes' */}
+                <Box label={'Total Feedbacks received'} data={'123'} />
+                <Box label={'Average Ratings'} data={'3.7 ⭐'} />
+                <Box label={'Total Users'} data={'45'} />
+
+                <Box label={'Average Submissions per User'} data={'5'}/>
             </div>
         </section>
-        <section className='my-4 w-2/3 bg-emerald-200 inline-block' id="feedback-trends">
-            <h2>Feedback trends over time</h2>
-            <hr />
+
+        <section className='my-4 pr-2 w-3/5 inline-block' id="feedback-trends">
             <AreaDTChart />
         </section>
-        <section className='my-4 w-1/3 bg-lime-200 inline-block' id="category-breakdown">
-            <h2>Category breakdown</h2>
-            <hr />
+        <section className='my-4 w-2/5 pl-2 inline-block' id="category-breakdown">
             <RadarChart />
-
         </section>
 
-        <section className='my-4'>
+        <section className='my-4 w-3/5 pr-16 inline-block'>
             <DonutChart />
+        </section>
+        <section className='my-4 w-2/5 inline-block'>
+            <TopUserslist />
         </section>
 
         {/* A template section for creators to select */}

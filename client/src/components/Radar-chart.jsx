@@ -13,12 +13,13 @@ const RadarChart = () => {
       type: 'radar',
     },
     xaxis: {
-      categories: ['Form-type 1', 'Form-type 2', 'Form-type 3', 'Form-type 4', 'Form-type 5'],
+      categories: ['Product feedback', 'Customer service', 'Website experience', 'Test type-1', 'Test type-2'],
     },
   };
 
   return (
     <>
+      <h2 className='text-xl text-sky-700'>Distribution of feedback categories</h2>
       <Chart options={options} series={series} type="radar" height={350} />
     </>
   );

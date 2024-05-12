@@ -25,6 +25,7 @@ const AreaDTChart = () => {
 
   return (
     <>
+      <h2 className='text-xl text-sky-700 mb-2'>Feedback trends over time</h2>
       <Chart options={options} series={series} type="area" height={350} />
     </>
   );
