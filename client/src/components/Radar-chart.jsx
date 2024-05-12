@@ -19,7 +19,7 @@ const RadarChart = () => {
 
   return (
     <>
-      <h2 className='text-xl text-sky-700'>Distribution of feedback categories</h2>
+      <h2 className='text-2xl text-sky-700'>Distribution of feedback categories</h2>
       <Chart options={options} series={series} type="radar" height={350} />
     </>
   );

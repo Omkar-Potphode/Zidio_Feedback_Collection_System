@@ -1,6 +1,4 @@
 import React from 'react'
-import Formlist from '../../components/Formlist'
-import { AiOutlinePlus } from 'react-icons/ai'
 import RadarChart from '../../components/Radar-chart'
 import AreaDTChart from '../../components/AreaDT-chart'
 import DonutChart from '../../components/Donut-chart'
@@ -11,13 +9,13 @@ const Dashboard = () => {
   return (
     <main className='w-[100vw] px-12 py-4' id='dashboard'>
         <section className='my-4' id="dashboard-overview">
-            <h2 className='text-xl mb-4 text-sky-700'>Overview</h2>
+            <h2 className='text-2xl mb-4 text-sky-700'>Overview</h2>
             <div className="flex flex-row justify-around">
                 {/* props will be dynamically inserted into 'Boxes' */}
+                
                 <Box label={'Total Feedbacks received'} data={'123'} />
                 <Box label={'Average Ratings'} data={'3.7 ⭐'} />
                 <Box label={'Total Users'} data={'45'} />
-
                 <Box label={'Average Submissions per User'} data={'5'}/>
             </div>
         </section>
@@ -54,9 +52,7 @@ const Dashboard = () => {
             </div>
             </div>
         </section> */}
-
-        {/* list of forms admin has created ....latest at top */}
-        <Formlist />
+        
     </main>
   )
 }

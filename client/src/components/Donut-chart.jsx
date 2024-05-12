@@ -14,7 +14,7 @@ const DonutChart = () => {
 
   return (
     <div>
-      <h2 className='text-xl text-sky-700 mb-2'>Star Rating Distribution</h2>
+      <h2 className='text-2xl text-sky-700 mb-4'>Star Rating Distribution</h2>
       <Chart options={options} series={series} type="donut" height={350} />
     </div>
   );

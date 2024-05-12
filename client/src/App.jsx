@@ -8,6 +8,7 @@ import FormDetails from './pages/admin/FormDetails';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ButtonGradient from './assets/svg/ButtonGradient';
+import Formslist from './pages/admin/Formslist';
 
 const Layout = () =>{
   return (
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path:'/admin/dashboard',
         element: <Dashboard />
+      },
+      {
+        path:'/admin/forms-list',
+        element: <Formslist />
       },
       {
         path:'/admin/form/:id',
