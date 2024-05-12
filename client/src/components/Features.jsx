@@ -11,8 +11,8 @@ const Features = () => {
 
   return (
     <>
-    <Section crosses >
-        <div className="container px-5 mx-auto">
+    <Section crosses id="features">
+        <div className="container px-5 mx-auto" >
             <div className="flex flex-col w-full mb-12 items-center">
                 <h1 className="text-3xl font-bold font-grotesk title-font mb-4 text-text">
                     Features

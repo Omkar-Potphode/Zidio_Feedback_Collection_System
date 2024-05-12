@@ -4,7 +4,7 @@ import { team } from '../constants';
 const About = () => {
   return (
     <>
-    <Section crosses className="mt-2">
+    <Section crosses className="mt-2" id="about-us">
         <div className='container px-5 py-14 mx-auto -mt-[5.25rem]'>
             <div className='flex flex-col text-center w-full mb-20'>
                 <h1 className='sm:text-3xl text-2xl font-bold font-grotesk  mb-4 text-text'>
@@ -16,7 +16,7 @@ const About = () => {
                 {team.map((item) => (
                     <div key={item.id} className='p-2 lg:w-1/3 md:w-1/2 w-full'>
                         <div className='h-full flex items-center border-accent border p-4 rounded-lg'>
-                            <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80"/>
+                            <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src={item.imgUrl}/>
 
                             <div className='flex-grow'>
                                 <div className='flex items-center'>

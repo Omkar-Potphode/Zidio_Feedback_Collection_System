@@ -1,15 +1,15 @@
-import { twitter, instagram, facebook } from "../assets"
+import { twitter, instagram, facebook, avatar } from "../assets"
 
 export const header = [
     {
         id: 1,
         title: 'Home',
-        url: '#home',
+        url: '#hero',
     },
     {
         id: 2,
-        title: 'Feedback Form',
-        url: '#feedback-form',
+        title: 'Features',
+        url: '#features',
     },
     {
         id: 3,
@@ -61,26 +61,31 @@ export const team = [
         id: 1,
         name: 'Siddhant Chalke',
         role: 'Developer',
+        imgUrl: avatar,
     },
     {
         id: 2,
         name: 'Omkar Potphode',
         role: 'Developer',
+        imgUrl: avatar,
     },
     {
         id: 3,
         name: 'Ritik Joshi',
         role: 'Developer',
+        imgUrl: avatar,
     },
     {
         id: 4,
         name: 'Sameer Ahamed S',
         role: 'Developer',
+        imgUrl: avatar,
     },
     {
         id: 5,
-        name: 'Sweeti Swami',
+        name: 'Sweeti',
         role: 'Developer',
+        imgUrl: avatar,
     },
 ];
 

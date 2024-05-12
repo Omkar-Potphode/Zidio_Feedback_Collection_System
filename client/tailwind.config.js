@@ -1,6 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-import { fontFamily } from "tailwindcss/defaultTheme";
+// @type {import('tailwindcss').Config} 
 
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
   content: [
@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'text': '#fcfce9',
-        'background': '#151505',
+        'text': '#0d1806',
+        'background': '#e9f7de',
         'primary': '#0CE5D3',
         'secondary': '#FF3C00',
         'tertiary': '#FF8A7D',
@@ -24,14 +24,14 @@ export default {
         grotesk: "var(--font-grotesk)",
       },
       animation: {
-        grid: "grid 15s linear infinite"
+        grid: "grid 15s linear infinite",
       },
       keyframes: {
         grid: {
-          "0%": { transform: "translateY(-50%)"},
-          "100%": { transform: "translateY(0)"}
-        }
-      }
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0)" },
+        },
+      },
     },
   },
   plugins: [],
