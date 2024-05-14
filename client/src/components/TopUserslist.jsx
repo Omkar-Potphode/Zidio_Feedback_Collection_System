@@ -12,7 +12,7 @@ const TopUserslist = () => {
 
   return (
     <div>
-        <h2 className='text-2xl text-sky-800 text-center mb-4'>Top Feedback Contributors</h2>
+        <h2 className='text-xl sm:text-2xl text-sky-800 text-center mb-4'>Top Feedback Contributors</h2>
         <table className="table-fixed w-[100%]">
         <thead>
           <tr className='text-xs'>

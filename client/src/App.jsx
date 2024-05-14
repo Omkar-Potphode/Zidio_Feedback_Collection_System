@@ -38,7 +38,7 @@ const router = createBrowserRouter([
         path:'/register',
         element: <Register />
       },
-      // Admin routes
+      // Admin routes given below
       {
         path:'/admin/dashboard',
         element: <Dashboard />
@@ -51,7 +51,8 @@ const router = createBrowserRouter([
         path:'/admin/form/:id',
         element: <FormDetails />
       },
-      
+      // User routes below 
+
       {
         path: "*",
         element: <Notfound />
@@ -63,7 +64,7 @@ const router = createBrowserRouter([
 export default function App() {
 
   return (
-    <div className="App pt-[5.75rem] lg:pt-[5.25rem] overflow-hidden">
+    <div className="App pt-[3rem] sm:pt-[5.75rem] lg:pt-[5.25rem] overflow-hidden">
       <RouterProvider router={router} />
     </div>
   )
