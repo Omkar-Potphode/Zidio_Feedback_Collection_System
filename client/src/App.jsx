@@ -30,11 +30,11 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path:'/login',
+        path:'/api/user/login',
         element: <Login />
       },
       {
-        path:'/register',
+        path:'/api/user/register',
         element: <Register />
       },
       // Admin routes
