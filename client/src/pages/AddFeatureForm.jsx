@@ -5,14 +5,14 @@ import { toast } from 'react-toastify';
 import { MdOutlineClose } from "react-icons/md";
 import { stars } from '../assets';
 
-const BugReportForm = () => {
+const AddFeatureForm = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   const onSubmit = (data) => {
     // Submit your data to the server or perform any actions here
     // For demonstration purposes, we'll just log the data and show a toast
     console.log(data);
-    toast.success('Bug report submitted successfully!',{
+    toast.success('Feedback submitted successfully!',{
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -33,21 +33,10 @@ const BugReportForm = () => {
         </Link>
 
         {/* Form title */}
-        <h2 className="text-xl font-semibold mb-4">Report a Bug</h2>
+        <h2 className="text-xl font-semibold mb-4">Request a Feature</h2>
 
         {/* Bug report form */}
         <form onSubmit={handleSubmit(onSubmit)}>
-          {/* Browser selection */}
-          <div className="mb-4">
-            <label htmlFor="browser" className="block text-sm font-medium text-gray-700">Browser</label>
-            <select id="browser" {...register('browser')} className="block w-full mt-1 p-2 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
-              <option value="Chrome">Chrome</option>
-              <option value="Firefox">Firefox</option>
-              <option value="Safari">Safari</option>
-              <option value="Edge">Edge</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
 
           {/* Title input */}
           <div className="mb-4">
@@ -91,4 +80,4 @@ const BugReportForm = () => {
   );
 };
 
-export default BugReportForm;
+export default AddFeatureForm;
