@@ -70,5 +70,26 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
+const getUserData = asyncHandler(async (req, res) => {
+  const UserId = req.user._id;
+
+  const user = await User.findById(UserId);
+
+  if (!user) {
+    return res.json({
+      msg: "User Not Found",
+    });
+  }
+
+  return res.status(200).json({
+    _id: user._id,
+    msg: "User Fetched Successfully",
+    isAdmin: user.isAdmin,
+    name: user.name,
+    email: user.email,
+    token: generateToken(user._id), // Generate JWT token for the user
+  });
+});
+
 // Export controller functions for use in routes
-module.exports = { registerUser, authUser };
+module.exports = { registerUser, authUser, getUserData };
