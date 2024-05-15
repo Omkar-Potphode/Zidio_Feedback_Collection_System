@@ -21,10 +21,11 @@ export const FeedBackForms = () => {
 }
 
 export const projects = [
+  
   {
-    title: "Product Review",
-    image: ProductReview,
-    link: "/product-review",
+    title: "App/Site rating",
+    image: AppRatings,
+    link: "/app-ratings",
   },
   {
     title: "Add Feature Feedback",
@@ -40,15 +41,5 @@ export const projects = [
     title: "Customer Survey",
     image: CustomerSurvey,
     link: "/customer-survey",
-  },
-  {
-    title: "App/Site rating",
-    image: AppRatings,
-    link: "/app-ratings",
-  },
-  {
-    title: "Customer Praise",
-    image: CustomerPraise,
-    link: "/customer-praise",
   },
 ];

@@ -9,17 +9,17 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ButtonGradient from './assets/svg/ButtonGradient';
 import { FeedBackForms } from './pages/FeedBackForms';
-import ProductReview from './pages/ProductReview';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import BugReportForm from './pages/BugReportForm';
 import AddFeatureForm from './pages/AddFeatureForm';
 import OverallRatingForm from './pages/OverallRatingForm';
+import CustomerSurvey from './pages/CustomerSurvey';
 
 const Layout = () =>{
 
   const location = useLocation();
-  const excludedRoutes = ["/report-bug", "/forms", "/add-feature", "/app-ratings"]; // Array of routes where Header and Footer should be excluded
+  const excludedRoutes = ["/report-bug", "/forms", "/add-feature", "/app-ratings", "/customer-survey"]; // Array of routes where Header and Footer should be excluded
   const isExcludedRoute = excludedRoutes.includes(location.pathname);
 
   return (
@@ -54,10 +54,6 @@ const router = createBrowserRouter([
         element: <FeedBackForms/>
       },
       {
-        path: '/product-review',
-        element: <ProductReview/>
-      },
-      {
         path: '/report-bug',
         element: <BugReportForm/>
       },
@@ -68,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: '/app-ratings',
         element: <OverallRatingForm/>
+      },
+      {
+        path:'/customer-survey',
+        element: <CustomerSurvey/>
       },
 
 
