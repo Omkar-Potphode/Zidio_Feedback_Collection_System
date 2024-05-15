@@ -6,6 +6,8 @@ import Step1 from '../design/Step1';
 import Step2 from '../design/Step2';
 import Step3 from '../design/Step3';
 import Confirmation from '../design/Confirmation';
+import { Link } from 'react-router-dom';
+import { MdOutlineClose } from 'react-icons/md';
 
 const steps = ['Step 1', 'Step 2', 'Step 3', 'Confirmation'];
 
@@ -42,6 +44,9 @@ const CustomerSurvey = () => {
 
   return (
     <FormProvider {...methods}>
+         <Link to="/forms" className="absolute top-0 right-0 ">
+        <MdOutlineClose size={32}/>
+        </Link>
       <form onSubmit={methods.handleSubmit(onSubmit)} className=" bg-tertiary max-w-lg mx-auto mt-10 p-5 border rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold mb-5">{steps[currentStep]}</h2>
         {currentStep === 0 && <Step1 />}
