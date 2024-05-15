@@ -26,19 +26,19 @@ const Formslist = () => {
   {/* list of forms admin has created ....latest at top */}
 
   return (
-    <main className='px-28 py-2' id='formlist'>
+    <main className='px-4 sm:px-28 py-2' id='formlist'>
         
       <div className='flex justify-between text-xl my-4'>
         <div>
           <p className='inline-block'>Recent forms</p>
           <AiOutlineHistory color='grey' className='inline-block mx-2' />
         </div>
-        <button>Sort <AiOutlineSortDescending color='blue' className='inline-block mx-2' /></button>
+        <button className='text-sm sm:text-base'>Sort <AiOutlineSortDescending color='blue' className='inline-block mx-2' /></button>
       </div>
 
       <table className="table-fixed w-[100%]">
         <thead>
-          <tr className=''>
+          <tr className='text-xs sm:text-base'>
             <th className='w-1/4'>Title</th>
             <th className='w-1/4'>Author</th>
             <th className='w-1/4'>Date</th>
@@ -48,7 +48,7 @@ const Formslist = () => {
         <tbody>
           {
             works.map((work, i) => (
-              <tr key={i} className='text-center h-12 border-b-2'>
+              <tr key={i} className='text-center text-xs sm:text-base h-12 border-b-2'>
                 <td>
                   <Link to={`/admin/form/${i}`}>{work.title}</Link>
                 </td>
