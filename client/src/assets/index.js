@@ -9,6 +9,7 @@ import AddFeature from './AddFeature.svg';
 import CustomerSurvey from './CustomerSurvey.svg';
 import AppRatings from './AppRatings.svg';
 import CustomerPraise from './CustomerPraise.svg';
+import thankyou from './illustration-thank-you.svg';
 
 export {
     twitter,
@@ -22,4 +23,5 @@ export {
     CustomerPraise,
     CustomerSurvey,
     AppRatings,
+    thankyou,
 }

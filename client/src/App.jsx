@@ -14,11 +14,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import BugReportForm from './pages/BugReportForm';
 import AddFeatureForm from './pages/AddFeatureForm';
+import OverallRatingForm from './pages/OverallRatingForm';
 
 const Layout = () =>{
 
   const location = useLocation();
-  const excludedRoutes = ["/report-bug", "/forms", "/add-feature"]; // Array of routes where Header and Footer should be excluded
+  const excludedRoutes = ["/report-bug", "/forms", "/add-feature", "/app-ratings"]; // Array of routes where Header and Footer should be excluded
   const isExcludedRoute = excludedRoutes.includes(location.pathname);
 
   return (
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: '/add-feature',
         element: <AddFeatureForm/>
+      },
+      {
+        path: '/app-ratings',
+        element: <OverallRatingForm/>
       },
 
 
