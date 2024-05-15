@@ -65,6 +65,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+      // API_ROUTES
         path: "/login",
         element: <Login />,
       },
