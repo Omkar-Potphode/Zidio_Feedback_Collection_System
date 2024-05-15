@@ -34,7 +34,7 @@ export const projects = [
   {
     title: "Bug Report",
     image: BugReport,
-    link: "/bug-report",
+    link: "/report-bug",
   },
   {
     title: "Customer Survey",

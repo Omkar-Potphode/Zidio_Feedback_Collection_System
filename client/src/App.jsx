@@ -9,18 +9,23 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ButtonGradient from './assets/svg/ButtonGradient';
 import { FeedBackForms } from './pages/FeedBackForms';
+import ProductReview from './pages/ProductReview';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import BugReportForm from './pages/BugReportForm';
 
 const Layout = () =>{
 
   const location = useLocation();
-  const isFeedbackFormsRoute = location.pathname === "/forms"
+  const excludedRoutes = ["/report-bug", "/forms"]; // Array of routes where Header and Footer should be excluded
+  const isExcludedRoute = excludedRoutes.includes(location.pathname);
 
   return (
     <div className="app">
-      {!isFeedbackFormsRoute && <Header/>}
+      {!isExcludedRoute && <Header/>}
         <Outlet />
         <ButtonGradient/>
-      {!isFeedbackFormsRoute && <Footer/>}
+      {!isExcludedRoute && <Footer/>}
     </div>
   )
 }
@@ -46,6 +51,16 @@ const router = createBrowserRouter([
         path: '/forms',
         element: <FeedBackForms/>
       },
+      {
+        path: '/product-review',
+        element: <ProductReview/>
+      },
+      {
+        path: '/report-bug',
+        element: <BugReportForm/>
+      },
+
+
       // Admin routes
       {
         path:'/admin/dashboard',
@@ -69,6 +84,7 @@ export default function App() {
   return (
     <div className="App pt-[5.75rem] lg:pt-[5.25rem] overflow-hidden">
       <RouterProvider router={router} />
+      <ToastContainer />
     </div>
   )
 }
