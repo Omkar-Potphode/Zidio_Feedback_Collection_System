@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
 import Dashboard from "./pages/admin/Dashboard";
+import Formslist from './pages/admin/Formslist';
 import FormDetails from "./pages/admin/FormDetails";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -111,9 +112,14 @@ const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: "/form/:id",
-        element: <FormDetails />,
+        path:'/forms-list',
+        element: <Formslist />
       },
+      {
+        path:'/form/:id',
+        element: <FormDetails />
+      },
+      // User routes below 
 
       {
         path: "*",
@@ -125,7 +131,7 @@ const router = createBrowserRouter([
 
 export default function App() {
   return (
-    <div className="App pt-[5.75rem] lg:pt-[5.25rem] overflow-hidden">
+    <div className="App pt-[3rem] sm:pt-[5.75rem] lg:pt-[5.25rem] overflow-hidden">
       <RouterProvider router={router} />
       <ToastContainer />
     </div>
