@@ -76,8 +76,9 @@ const Header = () => {
               </span>
               {
                 toggle && (
-                  <div className="w-[10rem] h-16 absolute z-5 top-16 right-[2.6rem] border-2 rounded-md flex flex-col justify-center">
+                  <div className="w-[10rem] h-28 bg-white absolute z-5 top-16 right-[2.6rem] border-2 rounded-md flex flex-col gap-1 justify-center">
                     <Link to='/dashboard'>Dashboard</Link>
+                    <Link to='/forms'>Feedback forms</Link>
                     <Link to='/forms-list'>Recent work</Link>
                     <button onClick={()=> logoutHandler}>Logout</button>
                   </div>

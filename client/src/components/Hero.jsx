@@ -2,6 +2,7 @@ import RetroGrid from "../design/RetroGrid";
 import Section from "./Section";
 import Button from "./Button";
 import { useSelector } from "react-redux";
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -26,9 +27,11 @@ const Hero = () => {
             insights from your customers, clients, and team members.
           </p>
 
-          <Button white className="mt-6 hover:text-text" href="">
-            Submit Feedback
-          </Button>
+                <Link to="/register">
+                    <Button white className="mt-6 hover:text-text">
+                        Submit Feedback
+                    </Button>
+                </Link>
 
           <RetroGrid />
         </div>
