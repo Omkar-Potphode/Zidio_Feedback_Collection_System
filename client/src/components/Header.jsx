@@ -11,6 +11,7 @@ const Header = () => {
   const { userInfo } = useSelector((state) => state.auth);
   const pathName = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
+  const [toggle, setToggle] = useState(false)
 
   const toggleNavigation = () => {
     if (openNavigation) {
@@ -70,9 +71,18 @@ const Header = () => {
           </nav>
           {userInfo ? (
             <>
-              <span>
-                Hello, <span className="font-semibold">{userInfo.name}</span>
+               <span className='w-[10rem]'>
+                Hello, <button onClick={()=> setToggle(!toggle)} className="font-semibold">{userInfo.name}</button>
               </span>
+              {
+                toggle && (
+                  <div className="w-[10rem] h-16 absolute z-5 top-16 right-[2.6rem] border-2 rounded-md flex flex-col justify-center">
+                    <Link to='/dashboard'>Dashboard</Link>
+                    <Link to='/forms-list'>Recent work</Link>
+                    <button onClick={()=> logoutHandler}>Logout</button>
+                  </div>
+                )
+              }
             </>
           ) : (
             <>
@@ -92,11 +102,7 @@ const Header = () => {
               </Link>
             </>
           )}
-          <Button
-            className="ml-auto lg:hidden"
-            px="px-3"
-            onClick={toggleNavigation}
-          >
+          <Button className="ml-auto lg:hidden" px="px-3" onClick={toggleNavigation} >
             <MenuSvg openNavigation={openNavigation} />
           </Button>
         </div>

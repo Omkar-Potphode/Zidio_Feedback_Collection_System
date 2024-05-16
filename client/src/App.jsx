@@ -75,11 +75,11 @@ const router = createBrowserRouter([
       },
       // Admin routes
       {
-        path: "/admin/dashboard",
+        path: "/dashboard",
         element: <Dashboard />,
       },
       {
-        path: "/admin/form/:id",
+        path: "/form/:id",
         element: <FormDetails />,
       },
 
