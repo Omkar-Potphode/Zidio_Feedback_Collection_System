@@ -1,37 +1,46 @@
 import React ,{useState, useEffect} from 'react'
 import {Link, useLocation, useNavigate} from 'react-router-dom'
-import Loader from '../components/Loader'
+import axios from 'axios'
+import { LOGIN_API } from '../api/route'
+import { toast } from 'react-toastify'
+import { useDispatch } from 'react-redux'
+import {setCredentials} from '../redux/features/authSlice'
+import { useSelector } from 'react-redux';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const {userInfo} = useSelector(state => state.auth)
+  const {userInfo} = useSelector(state => state.auth)
+
   // For redirecting
   const {search} = useLocation()
   const sp = new URLSearchParams(search)
   const redirect = sp.get('redirect') || '/'
 
-  // useEffect(()=>{
-  //   if(userInfo){
-  //     navigate(redirect);
-  //   }
-  // }, [navigate, redirect, userInfo])
+  useEffect(()=>{
+    if(userInfo){
+      navigate(redirect);
+    }
+  }, [navigate, redirect, userInfo])
 
 
   const submitHandler = async (e) => {
     e.preventDefault();
     try{
-      // const res = await login({email, password}).unwrap();
-
-      console.log({email, password});
-      navigate(redirect)
-      // dispatch(setCredentials({...res}));
-      
+      const {data} = await axios.post(LOGIN_API,{email,password})
+      console.log(data);
+      if(data.msg === "Login Successfully"){
+        toast.success(data.msg)
+        console.log(data)
+        localStorage.setItem('userInfo', JSON.stringify(data))
+        dispatch(setCredentials(data));
+        navigate(redirect)
+      }
     } catch(error){
-      console.error(error?.data?.message || error.message);
+      toast.error(error?.response?.data?.message || error?.data?.message || error.message)
     }
   }
   return (
