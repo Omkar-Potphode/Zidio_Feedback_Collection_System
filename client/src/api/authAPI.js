@@ -1,12 +1,11 @@
-import axios from 'axios';
+// import axios from 'axios';
+// import { LOGOUT_API } from './route';
 
-const API_URL = `https://localhost:80`; // Replace with your API URL
-
-export const logoutApiCall = async () => {
-  try {
-    const response = await axios.post(`${API_URL}/logout`);
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
-};
+// export const logoutApiCall = async () => {
+//   try {
+//     const response = await axios.post(`${LOGOUT_API}`);
+//     return response.data;
+//   } catch (error) {
+//     throw error;
+//   }
+// };

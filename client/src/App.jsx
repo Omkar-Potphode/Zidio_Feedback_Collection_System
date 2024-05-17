@@ -73,10 +73,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <Home />, // for non-Users
       },
       {
       // API_ROUTES
+      // User routes 
         path: "/login",
         element: <Login />,
       },
@@ -84,8 +85,22 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
+      
+      // Admin routes
       {
-        path: '/forms',
+        path: "/admin/dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path:'/admin/forms-list',
+        element: <Formslist />
+      },
+      {
+        path:'/admin/form/:id',
+        element: <FormDetails />
+      },
+      {
+        path: '/admin/create-form',
         element: <FeedBackForms/>
       },
       {
@@ -104,22 +119,6 @@ const router = createBrowserRouter([
         path:'/customer-survey',
         element: <CustomerSurvey/>
       },
-
-
-      // Admin routes
-      {
-        path: "/dashboard",
-        element: <Dashboard />,
-      },
-      {
-        path:'/forms-list',
-        element: <Formslist />
-      },
-      {
-        path:'/form/:id',
-        element: <FormDetails />
-      },
-      // User routes below 
 
       {
         path: "*",

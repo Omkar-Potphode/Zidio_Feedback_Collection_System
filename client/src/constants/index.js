@@ -106,3 +106,34 @@ export const features = [
         description: 'Ability to track individual feedback submissions, facilitating monitoring and analysis of feedback history.',
     },
 ];
+
+export const adminRoutes = [
+    {
+        id: 1,
+        title: 'Dashboard',
+        url: '/admin/dashboard',
+    },
+    {
+        id: 2,
+        title: 'Recent work',
+        url: '/admin/forms-list',
+    },
+    {
+        id: 3,
+        title: 'Create new',
+        url: '/admin/create-form',
+    },
+];
+
+export const userRoutes = [
+    {
+        id: 1,
+        title: 'Home',
+        url: '/',
+    },
+    {
+        id: 2,
+        title: 'Notifications',
+        url: '/notifications',
+    },
+]
