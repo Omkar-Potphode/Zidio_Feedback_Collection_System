@@ -8,11 +8,22 @@ const userSchema = mongoose.Schema(
     name: { type: String, required: true }, // User's name
     email: { type: String, unique: true, required: true }, // User's email (unique)
     password: { type: String, required: true }, // User's password
-    isAdmin: { // Flag indicating if the user is an admin
+    isAdmin: {
       type: Boolean,
       required: true,
       default: false, // Default value is false
     },
+    websiteRating: { type: Number },
+    websiteFeedbacks: [{title:{type: String},description:{type: String}, }],
+    websiteBugReport: [{browser:{ type: String },title:{ type: String },description:{ type: String }}],
+    surveyReport: [
+      {
+        name: { type: String },
+        email: { type: String },
+        feedback: { type: String },
+        rating: { type: Number },
+      },
+    ],
   },
   { timestamps: true } // Enable timestamps for createdAt and updatedAt fields
 );
@@ -24,7 +35,8 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
 
 // Middleware to hash the password before saving the user to the database
 userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) { // Check if the password has been modified
+  if (!this.isModified("password")) {
+    // Check if the password has been modified
     next();
   }
 

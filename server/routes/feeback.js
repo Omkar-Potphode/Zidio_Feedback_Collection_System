@@ -4,7 +4,7 @@ const {
   addFeedback,
   editFeedback,
   deleteFeedback,
-  getFeedbacks,
+  getFeedbacks,addSiteFeedback,addSiteBug,addSiteRating,addSiteSurvey
 } = require("../controllers/feebackController");
 
 // Create a new router instances
@@ -14,6 +14,10 @@ const router = express.Router();
 const {Protect} = require('../middleware/authMiddleware')
 
 // Define routes and corresponding controller methods
+router.route("/addSiteRating").post(Protect,addSiteRating); // POST request to Add a Feedback
+router.route("/addSiteFeedback").post(Protect,addSiteFeedback); // POST request to Add a Feedback
+router.route("/addSiteBug").post(Protect,addSiteBug); // POST request to Add a Feedback
+router.route("/addSiteSurvey").post(Protect,addSiteSurvey); // POST request to Add a Feedback
 router.route("/addFeedback").post(Protect,addFeedback); // POST request to Add a Feedback
 router.route("/editFeedback").put(Protect,editFeedback); // Edit request to Edit a Feedback
 router.route("/deleteFeedback/:feedbackId").delete(Protect,deleteFeedback); // Delete request to delete a feeback
