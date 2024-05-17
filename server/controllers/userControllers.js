@@ -91,5 +91,22 @@ const getUserData = asyncHandler(async (req, res) => {
   });
 });
 
+// Getting all users
+const getAllUsers = asyncHandler(async (req, res)=>{
+  const users = await User.find({})
+  res.json(users);
+
+});
+
+// logging out the user
+const logoutUser = asyncHandler(async(req, res)=>{
+  res.cookie('jwt', '', {
+      httpOnly: true,
+      expires: new Date(0),
+  })
+
+  res.status(200).json({message: "loged out successfully"})
+});
+
 // Export controller functions for use in routes
-module.exports = { registerUser, authUser, getUserData };
+module.exports = { registerUser, authUser, getUserData, getAllUsers, logoutUser };

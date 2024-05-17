@@ -5,6 +5,7 @@ export const HOST = 'http://localhost:80';
 export const SIGNUP_API = `${HOST}/api/user/register`; // Endpoint to register a new user (send name, email, and password)
 export const LOGIN_API = `${HOST}/api/user/login`; // Endpoint to login (send email and password)
 export const GET_USER_DATA = `${HOST}/api/user/getUserData`; // Endpoint to getUserData (send token in bearer)
+// export const LOGOUT_API = `${HOST}/api/user/logout`; // Endpoint to login (send email and password)
 
 // Feedback APIs
 export const ADD_FEEDBACK = `${HOST}/api/feeback/addFeedback`; // Endpoint to add feedback (send companyName, message, and rating in an object, and token in the bearer)

@@ -1,11 +1,12 @@
-import { header } from "../constants";
-import { Link, useLocation } from "react-router-dom";
+import { header, adminRoutes, userRoutes } from "../constants";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import { useState } from "react";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import { HamburgerMenu } from "../design/Header";
 import MenuSvg from "../assets/svg/MenuSvg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../redux/features/authSlice";
 
 const Header = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -30,6 +31,20 @@ const Header = () => {
     setOpenNavigation(false);
   };
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const logoutHandler = async () => {
+    try {
+      // await logoutApiCall().unwrap();
+      dispatch(logout());
+      navigate('/login');
+
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       <div
@@ -47,7 +62,7 @@ const Header = () => {
             fixed top-[5rem] bottom-0 left-0 right-0 bg-background lg:static lg:flex lg:mx-auto`}
           >
             <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
-              {header.map((item) => (
+              {!userInfo && header.map((item) => (
                 <a
                   key={item.id}
                   href={item.url}
@@ -65,22 +80,63 @@ const Header = () => {
                   {item.title}
                 </a>
               ))}
+
+              {/* For Users */}
+              {
+                userInfo && userRoutes.map((link)=>(
+                  <a
+                  key={link.id}
+                  href={link.url}
+                  onClick={handleClick}
+                  className={`block relative font-code text-2xl uppercase text-text transition-colors hover:text-secondary
+                    ${
+                      link.onlyMobile ? "lg:hidden" : ""
+                    } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-sm lg:font-semibold
+                    ${
+                      link.url === pathName.hash
+                        ? "z-2 lg:text-text"
+                        : "lg:text-text"
+                    }`}
+                >
+                  {link.title}
+                </a>
+                ))
+              }
+              {/* For Admins */}
+              {
+                !userInfo?.isAdmin && adminRoutes.map((link)=>(
+                  <a
+                  key={link.id}
+                  href={link.url}
+                  onClick={handleClick}
+                  className={`block relative font-code text-2xl uppercase text-text transition-colors hover:text-secondary
+                    ${
+                      link.onlyMobile ? "lg:hidden" : ""
+                    } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-sm lg:font-semibold
+                    ${
+                      link.url === pathName.hash
+                        ? "z-2 lg:text-text"
+                        : "lg:text-text"
+                    }`}
+                >
+                  {link.title}
+                </a>
+                ))
+              }
             </div>
 
             <HamburgerMenu />
           </nav>
-          {userInfo ? (
+          { userInfo ? (
             <>
                <span className='w-[10rem]'>
                 Hello, <button onClick={()=> setToggle(!toggle)} className="font-semibold">{userInfo.name}</button>
               </span>
               {
                 toggle && (
-                  <div className="w-[10rem] h-28 bg-white absolute z-5 top-16 right-[2.6rem] border-2 rounded-md flex flex-col gap-1 justify-center">
-                    <Link to='/dashboard'>Dashboard</Link>
-                    <Link to='/forms'>Feedback forms</Link>
-                    <Link to='/forms-list'>Recent work</Link>
-                    <button onClick={()=> logoutHandler}>Logout</button>
+                  <div className="w-[8rem] h-16 text-center bg-white absolute z-5 top-16 right-[7rem] border-2 rounded-md flex flex-col gap-1 justify-center">
+                    <Link to='/profile'>Profile</Link>
+                    <button onClick={logoutHandler}>Logout</button>
                   </div>
                 )
               }
