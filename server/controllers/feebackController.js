@@ -2,7 +2,135 @@
 const asyncHandler = require("express-async-handler"); // Middleware for handling asynchronous functions
 const Feedback = require("../models/feedBackModel"); // Feedback model
 const User = require("../models/userModel"); // User model
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
+
+const addSiteRating = asyncHandler(async (req, res) => {
+  const UserId = req.user._id;
+
+  // Extract data from request body
+  const { rating } = req.body;
+
+  // Validate input data
+  if (!rating) {
+    return res
+      .status(400)
+      .json({ success: false, error: "Rating Not Provided" });
+  }
+
+  await User.findByIdAndUpdate(UserId, { websiteRating: rating });
+
+  return res.status(200).json({
+    success: true,
+    msg: " Thank you for Rating Us !!",
+  });
+});
+
+const addSiteFeedback = asyncHandler(async (req, res) => {
+  const userId = req.user._id;
+
+  // Extract data from request body
+  const { title, description } = req.body;
+
+  // Validate input data
+  if (!title || !description) {
+    return res
+      .status(400)
+      .json({ success: false, error: "Missing required fields" });
+  }
+
+  // Find the user by ID
+  const user = await User.findById(userId);
+
+  if (!user) {
+    return res.status(404).json({ success: false, error: "User not found" });
+  }
+
+  // Add new feedback to the user's feedback array
+  user.websiteFeedbacks.push({ title, description });
+
+  // Save the updated user document
+  await user.save();
+
+  // Send a success response
+  res
+    .status(201)
+    .json({ success: true, msg: "Thank you for providing feedback." });
+});
+
+module.exports = addSiteFeedback;
+
+
+const addSiteBug = asyncHandler(async (req, res) => {
+  
+  const UserId = req.user._id;
+
+  // Extract data from request body
+  const { browser,title,description } = req.body;
+
+  // Validate input data
+  if (!browser || !title || !description) {
+    return res
+      .status(400)
+      .json({ success: false, error: "Missing required fields" });
+  }
+
+  // Find the user by ID
+  const user = await User.findById(UserId);
+
+  if (!user) {
+    return res.status(404).json({ success: false, error: "User not found" });
+  }
+
+  // Add new feedback to the user's feedback array
+  user.websiteBugReport.push({ browser,title,description });
+
+  // Save the updated user document
+  await user.save();
+
+  // Send a success response
+  res
+    .status(201)
+    .json({ success: true, msg: "Thank you for raising Bug Report." });
+
+});
+
+// Controller function to add a new feedback
+const addSiteSurvey = asyncHandler(async (req, res) => {
+  // Extract sender details from the request user object
+  const UserId = req.user._id;
+
+  // Extract data from request body
+  const { name,
+    email,
+    feedback,
+    rating,} = req.body;
+
+  // Validate input data
+  if (!name || !email || !rating || !feedback) {
+    return res
+      .status(400)
+      .json({ success: false, error: "Missing required fields" });
+  }
+
+  // Find the user by ID
+  const user = await User.findById(UserId);
+
+  if (!user) {
+    return res.status(404).json({ success: false, error: "User not found" });
+  }
+
+  // Add new feedback to the user's feedback array
+  user.surveyReport.push({ name,email,feedback,rating });
+
+  // Save the updated user document
+  await user.save();
+
+  // Send a success response
+  res
+    .status(201)
+    .json({ success: true, msg: "Thank you for Completing Survey." });
+
+});
 
 // Controller function to add a new feedback
 const addFeedback = asyncHandler(async (req, res) => {
@@ -119,8 +247,10 @@ const getFeedbacks = asyncHandler(async (req, res) => {
   // Extract company name from query parameters
   const { companyName } = req.params;
 
-  if(!companyName){
-    return res.status(403).json({ success: false, error: "Company Name is Required" });
+  if (!companyName) {
+    return res
+      .status(403)
+      .json({ success: false, error: "Company Name is Required" });
   }
 
   // Fetch all feedbacks for the specified company from the database
@@ -138,8 +268,10 @@ const deleteFeedback = asyncHandler(async (req, res) => {
   // Extract feedback ID from request parameters
   const { feedbackId } = req.params;
 
-  if(!feedbackId){
-    return res.status(403).json({ success: false, error: "Feedback Id is Required" });
+  if (!feedbackId) {
+    return res
+      .status(403)
+      .json({ success: false, error: "Feedback Id is Required" });
   }
 
   // Validate feedbackId
@@ -175,4 +307,13 @@ const deleteFeedback = asyncHandler(async (req, res) => {
 });
 
 // Export controller functions for use in routes
-module.exports = { addFeedback, deleteFeedback, editFeedback, getFeedbacks };
+module.exports = {
+  addFeedback,
+  deleteFeedback,
+  editFeedback,
+  getFeedbacks,
+  addSiteFeedback,
+  addSiteBug,
+  addSiteRating,
+  addSiteSurvey,
+};

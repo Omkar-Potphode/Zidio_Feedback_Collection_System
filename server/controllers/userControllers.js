@@ -35,6 +35,7 @@ const registerUser = asyncHandler(async (req, res) => {
     res.status(201).json({
       _id: user._id,
       msg: "Registered Successfully",
+      rating:user.websiteRating,
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
@@ -59,6 +60,7 @@ const authUser = asyncHandler(async (req, res) => {
     res.json({
       _id: user._id,
       msg: "Login Successfully",
+      rating:user.websiteRating,
       isAdmin: user.isAdmin,
       name: user.name,
       email: user.email,
@@ -84,6 +86,7 @@ const getUserData = asyncHandler(async (req, res) => {
   return res.status(200).json({
     _id: user._id,
     msg: "User Fetched Successfully",
+    rating:user.websiteRating,
     isAdmin: user.isAdmin,
     name: user.name,
     email: user.email,
