@@ -27,7 +27,7 @@ const Hero = () => {
             insights from your customers, clients, and team members.
           </p>
 
-                <Link to="/register">
+                <Link to={userInfo?`/feedback-forms`:`/register`}>
                     <Button white className="mt-6 hover:text-text">
                         Submit Feedback
                     </Button>

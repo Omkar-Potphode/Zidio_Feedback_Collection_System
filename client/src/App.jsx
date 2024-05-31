@@ -4,8 +4,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from "./pages/Home";
 import Dashboard from "./pages/admin/Dashboard";
-import Formslist from './pages/admin/Formslist';
-import FormDetails from "./pages/admin/FormDetails";
+import Feedslist from './pages/admin/Feedslist';
+import FormDetails from "./pages/admin/Feedback";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ButtonGradient from "./assets/svg/ButtonGradient";
@@ -22,6 +22,7 @@ import BugReportForm from './pages/BugReportForm';
 import AddFeatureForm from './pages/AddFeatureForm';
 import OverallRatingForm from './pages/OverallRatingForm';
 import CustomerSurvey from './pages/CustomerSurvey';
+import Profile from './pages/Profile';
 
 const Layout = () => {
   const authData = useSelector((state) => state.auth);
@@ -85,6 +86,10 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
       
       // Admin routes
       {
@@ -93,14 +98,14 @@ const router = createBrowserRouter([
       },
       {
         path:'/admin/forms-list',
-        element: <Formslist />
+        element: <Feedslist />
       },
       {
         path:'/admin/form/:id',
         element: <FormDetails />
       },
       {
-        path: '/admin/create-form',
+        path: '/feedback-forms',
         element: <FeedBackForms/>
       },
       {

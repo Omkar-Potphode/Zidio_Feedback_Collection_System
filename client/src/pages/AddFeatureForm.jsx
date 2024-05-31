@@ -61,7 +61,7 @@ const AddFeatureForm = () => {
     <div className="max-w-[300px] sm:max-w-md mx-auto p-6 border rounded-md shadow-lg mt-20 bg-tertiary">
       <div className="relative ">
         {/* Cross button for navigation */}
-        <Link to="/forms" className="absolute top-0 right-0 ">
+        <Link to="/feedback-forms" className="absolute top-0 right-0 ">
           <MdOutlineClose size={32} />
         </Link>
 
