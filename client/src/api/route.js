@@ -13,5 +13,5 @@ export const ADD_SITE_BUG = `${HOST}/api/feeback/addSiteBug`;
 export const ADD_SITE_SURVEY = `${HOST}/api/feeback/addSiteSurvey`;
 export const ADD_FEEDBACK = `${HOST}/api/feeback/addFeedback`; // Endpoint to add feedback (send companyName, message, and rating in an object, and token in the bearer)
 export const EDIT_FEEDBACK = `${HOST}/api/feeback/editFeedback`; // Endpoint to edit feedback (send feedbackId, companyName, message, and rating in an object, and token in the bearer)
-export const GET_FEEDBACK = `${HOST}/api/feeback/deleteFeedback`; // Endpoint to get feedback (send Feedback Id in Params and token in the bearer)
-export const DELETE_FEEDBACK = `${HOST}/api/feeback/getFeedbacks`; // Endpoint to delete feedback (send Company Name in Params and token in the bearer)
+export const GET_FEEDBACK = `${HOST}/api/feeback/getFeedbacks`; // Endpoint to get feedback (send Feedback Id in Params and token in the bearer)
+export const DELETE_FEEDBACK = `${HOST}/api/feeback/deleteFeedback`; // Endpoint to delete feedback (send Company Name in Params and token in the bearer)

@@ -104,7 +104,7 @@ const Header = () => {
               }
               {/* For Admins */}
               {
-                !userInfo?.isAdmin && adminRoutes.map((link)=>(
+                userInfo?.isAdmin && adminRoutes.map((link)=>(
                   <a
                   key={link.id}
                   href={link.url}

@@ -115,14 +115,14 @@ export const adminRoutes = [
     },
     {
         id: 2,
-        title: 'Recent work',
+        title: 'Recent feedbacks',
         url: '/admin/forms-list',
     },
-    {
-        id: 3,
-        title: 'Create new',
-        url: '/admin/create-form',
-    },
+    // {
+    //     id: 3,
+    //     title: 'Create new',
+    //     url: '/admin/create-form',
+    // },
 ];
 
 export const userRoutes = [
